@@ -7,19 +7,17 @@ public class TimeSheet {
     private String status;
     private int vacationDays;
     private int sickDays;
-    private int totalSickDays;
+    /* private int totalSickDays; */
 
     // Konstruktor
 
     public void Timesheet(int month, double totalHours, String status, int vacationDays, int sickDays,
             int totalSickDays) {
-
         this.month = month;
         this.totalHours = totalHours;
         this.status = status;
         this.vacationDays = vacationDays;
         this.sickDays = sickDays;
-        this.totalSickDays = totalSickDays;
     }
 
     // Getter und Setter-Methoden für die Attribute
@@ -55,17 +53,17 @@ public class TimeSheet {
         this.vacationDays = vacationDays;
     }
 
-    public int getTotalSickDays() {
-        return totalSickDays;
-    }
-
     public void setSickDays(int sickDays) {
         this.sickDays = sickDays;
     }
 
+    public int getSickDays() {
+        return sickDays;
+    }
+
 }
 
-class VacationDays {
+/* class VacationDays {
     // Attributes and methods
 }
 
@@ -90,4 +88,4 @@ class SickDays {
             totalSickDays += numberOfSickDays;
         }
     }
-}
+} */
