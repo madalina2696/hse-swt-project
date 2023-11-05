@@ -1,16 +1,20 @@
-import swt.User.UserAuthentication;
+import swt.Employee;
 
 public class Main {
 
     public static void main(String[] args) {
-        UserAuthentication user = new UserAuthentication("alice", "secret123");
+        UserAuthentication userAuth = new UserAuthentication("alice", "secret123");
 
-        // Einloggen
-        user.logIn();
+        Employee user = new Employee("BOB", "secure");
+
+        user.setVacationDays(30);
+
+        /* // Einloggen
+        userAuth.logIn();
         System.out.println("Benutzer ist eingeloggt: " + user.isUserLoggedIn());
 
         // Ausloggen
-        user.logOut();
-        System.out.println("Benutzer ist ausgeloggt: " + user.isUserLoggedIn());
+        userAuth.logOut();
+        System.out.println("Benutzer ist ausgeloggt: " + user.isUserLoggedIn()); */
     }
 }
