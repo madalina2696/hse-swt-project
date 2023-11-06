@@ -2,23 +2,22 @@ package swt;
 
 public class User {
 
+    private int id;
     private String username;
     private String password;
 
-    // Konstruktor
-    public User(String username, String password) {
+    public User(int id, String username, String password) {
+        this.id = id;
         this.username = username;
         this.password = password;
     }
 
-    // Getter-Methode
-    public String getUsername() {
-        return username;
+    public int getId() {
+        return id;
     }
 
-    // Setter-Methode
-    public void setUsername(String newUsername) {
-        this.username = newUsername;
+    public String getUsername() {
+        return username;
     }
 
     public class UserAuthentication {
@@ -26,30 +25,26 @@ public class User {
         private String password;
         private boolean isLoggedIn;
 
-        // Konstruktor
         public UserAuthentication(String username, String password) {
             this.username = username;
             this.password = password;
-            this.isLoggedIn = false; // Initialer Anmeldestatus ist "ausgeloggt"
+            this.isLoggedIn = false; 
         }
 
-        // Methode zum Einloggen
         public void logIn() {
             if (username.equals("Eingabe JavaFX") && password.equals("Eingabe JavaFX")) {
                 isLoggedIn = true;
             } else {
-                isLoggedIn = false; //Falsche Anmeldedaten, bitte nochmal einloggen
+                isLoggedIn = false;
             }
         }
 
-        // Methode zum Ausloggen
         public void logOut() {
-            isLoggedIn = false; //  zurück zur Anmeldemaske
+            isLoggedIn = false;
         }
 
-        // Getter-Methode für den Anmeldestatus
         public boolean isUserLoggedIn() {
-            return isLoggedIn;  //Anzeige in der Übersichtsmaske: Wer ist eingeloggt.
+            return isLoggedIn; 
         }
 
     }

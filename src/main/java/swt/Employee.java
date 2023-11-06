@@ -9,8 +9,8 @@ public class Employee extends User {
     private int totalSickDays;
 
     // Constructor
-    public Employee(String username, String password) {
-        super(username, password);
+    public Employee(int id, String username, String password) {
+        super(id ,username, password);
         this.timeSheets = new ArrayList<TimeSheet>(12);
     }
 
