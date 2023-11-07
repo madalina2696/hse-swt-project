@@ -11,33 +11,39 @@ public class Supervisor extends Employee {
     }
 
     // Approve vacation request
-    public void approveVacationRequest(TimeSheet timeSheet, int vacationDays) {
+    public void handleVacationRequest(TimeSheet timeSheet, int vacationDays, int totalVacationDays) {
         // Überprüfen, ob genügend Urlaubstage für die Anfrage verfügbar sind
-        if (vacationDays <= timeSheet.getVacationDays().getTotalVacationDays()) {
-            timeSheet.getVacationDays().addVacationDays(-vacationDays);
-        } else {
-            System.out.println("Nicht genügend Urlaubstage verfügbar für die Anfrage.");
+        TimeSheet timesheet = new TimeSheet();
+
+        vacationDays = timeSheet.getVacationDays();
+        totalVacationDays = timeSheet.getTotalVacationDays();
+
+        if (vacationDays <= totalVacationDays && vacationDays!=0) {
+            int daysToAdd = +vacationDays;
+            vacationDays = timeSheet.addVacationDays(daysToAdd);
+            //approve an employee weiterleiten
+        } 
+        else {
+            //System.out.println("Nicht genügend Urlaubstage verfügbar für die Anfrage.");
+            //hier die rejectVacationRequest() methode einfügen für effizienteren code
         }
-    }
-    
-    // Reject vacation request
-    public void rejectVacationRequest(TimeSheet timeSheet) {
-        int vacationDays = timeSheet.getVacationDays().getTotalVacationDays();
-        timeSheet.getVacationDays().addVacationDays(-vacationDays);
     }
 
     // Approve flex time
-    public void approveFlexTime(Employee employee) {
-        // Implementation code here
-    }
+    public void handleFlexTime(Employee employee, int flexTime) {
+        
+        flexTime = employee.getFlexTime();            
 
-    // Reject flex time
-    public void rejectFlexTime(Employee employee) {
-        // Implementation code here
+        if (flexTime > 0){
+            //approve an employee weiterleiten
+        }
+        else{
+            //Reject Flextime 
+        }
     }
 
     // Approve monthly work time
-    public void approveMonthlyWorkTime(TimeSheet timeSheet) {
+    public void handleMonthlyWorkTime(TimeSheet timeSheet) {
         // Implementation code here
     }
 

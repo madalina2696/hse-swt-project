@@ -7,34 +7,37 @@ public class TimeSheet{
     private String status;
     private int vacationDays;
     private int sickDays;
+    private int totalVacationDays;
     /* private int totalSickDays; */
 
     // Konstruktor
 
-    public Timesheet(int month, double totalHours, String status, int vacationDays, int sickDays,
-            int totalSickDays) {
+    public void Timesheet(int month, double totalHours, String status, int vacationDays, int sickDays,
+            int totalSickDays, int totalVacationDays) {
+
         this.month = month;
         this.totalHours = totalHours;
         this.status = status;
         this.vacationDays = vacationDays;
         this.sickDays = sickDays;
+        this.totalVacationDays = totalVacationDays;
     }
 
     // Getter und Setter-Methoden für die Attribute
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
     public double getTotalHours() {
         return totalHours;
     }
 
     public void setTotalHours(double totalHours) {
         this.totalHours = totalHours;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
     }
 
     public String getStatus() {
@@ -53,34 +56,27 @@ public class TimeSheet{
         this.vacationDays = vacationDays;
     }
 
-    public void setSickDays(int sickDays) {
-        this.sickDays = sickDays;
+    public int getTotalVacationDays() {
+        return totalVacationDays;
+    }
+
+    public void setTotalVacationDays(int totalVacationDays){
+        this.totalVacationDays = totalVacationDays;
     }
 
     public int getSickDays() {
         return sickDays;
     }
 
-}
+    public void setSickDays(int sickDays) {
+        this.sickDays = sickDays;
+    }
 
-public class VacationDays {
-   private int totalVacationDays;
+    public int addVacationDays(int vacationDays){
 
-        public VacationDays() {
-            totalVacationDays = 0; // Zu Beginn hat der Mitarbeiter 0 Urlaubstage
-        }
+        return vacationDays;
 
-        public int getTotalVacationDays() {
-            return totalVacationDays;
-        }
-
-        public void addVacationDays(int numberOfVacationDays) {
-            if (numberOfVacationDays > 0) {
-                totalVacationDays += numberOfVacationDays;
-            }
-        }
-    
-
+    }
 }
 //class SickDays {
     // Attributes and methods
@@ -95,7 +91,7 @@ public class VacationDays {
     //{
 
     //public int getTotalSickDays() {
-        return totalSickDays;
+        //return totalSickDays;
     //}
 
     //public void addSickDays(int numberOfSickDays) {
