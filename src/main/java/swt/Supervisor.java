@@ -11,13 +11,19 @@ public class Supervisor extends Employee {
     }
 
     // Approve vacation request
-    public void approveVacationRequest(TimeSheet vacationDay) {
-        // Implementation code here
+    public void approveVacationRequest(TimeSheet timeSheet, int vacationDays) {
+        // Überprüfen, ob genügend Urlaubstage für die Anfrage verfügbar sind
+        if (vacationDays <= timeSheet.getVacationDays().getTotalVacationDays()) {
+            timeSheet.getVacationDays().addVacationDays(-vacationDays);
+        } else {
+            System.out.println("Nicht genügend Urlaubstage verfügbar für die Anfrage.");
+        }
     }
-
+    
     // Reject vacation request
-    public void rejectVacationRequest(VacationDay vacationDay) {
-        // Implementation code here
+    public void rejectVacationRequest(TimeSheet timeSheet) {
+        int vacationDays = timeSheet.getVacationDays().getTotalVacationDays();
+        timeSheet.getVacationDays().addVacationDays(-vacationDays);
     }
 
     // Approve flex time

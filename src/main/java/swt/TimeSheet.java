@@ -11,7 +11,7 @@ public class TimeSheet{
 
     // Konstruktor
 
-    public void Timesheet(int month, double totalHours, String status, int vacationDays, int sickDays,
+    public Timesheet(int month, double totalHours, String status, int vacationDays, int sickDays,
             int totalSickDays) {
         this.month = month;
         this.totalHours = totalHours;
@@ -63,29 +63,45 @@ public class TimeSheet{
 
 }
 
-/* class VacationDays {
-    // Attributes and methods
-}
+public class VacationDays {
+   private int totalVacationDays;
 
-class SickDays {
+        public VacationDays() {
+            totalVacationDays = 0; // Zu Beginn hat der Mitarbeiter 0 Urlaubstage
+        }
+
+        public int getTotalVacationDays() {
+            return totalVacationDays;
+        }
+
+        public void addVacationDays(int numberOfVacationDays) {
+            if (numberOfVacationDays > 0) {
+                totalVacationDays += numberOfVacationDays;
+            }
+        }
+    
+
+}
+//class SickDays {
     // Attributes and methods
     // add employee
-    private int totalSickDays;
+   // private int totalSickDays;
 
     // Konstruktor
-    public SickDays() {
+   // public SickDays() {
 
-        this.totalSickDays = 0; // Zu Beginn hat der Mitarbeiter 0 Krankheitstage
+      //  this.totalSickDays = 0; // Zu Beginn hat der Mitarbeiter 0 Krankheitstage
 
-    }
+    //{
 
-    public int getTotalSickDays() {
+    //public int getTotalSickDays() {
         return totalSickDays;
-    }
+    //}
 
-    public void addSickDays(int numberOfSickDays) {
-        if (numberOfSickDays > 0) {
-            totalSickDays += numberOfSickDays;
-        }
-    }
-} */
+    //public void addSickDays(int numberOfSickDays) {
+     //   if (numberOfSickDays > 0) {
+       //     totalSickDays += numberOfSickDays;
+       // }
+    //}
+//} */
+//}
