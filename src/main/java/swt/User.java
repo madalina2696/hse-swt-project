@@ -2,22 +2,50 @@ package swt;
 
 public class User {
 
+    private int id;
     private String username;
     private String password;
 
-    // Konstruktor
-    public User(String username, String password) {
+    public User(int id, String username, String password) {
+        this.id = id;
         this.username = username;
         this.password = password;
     }
 
-    // Getter-Methode
+    public int getId() {
+        return id;
+    }
+
     public String getUsername() {
         return username;
     }
 
-    // Setter-Methode
-    public void setUsername(String newUsername) {
-        this.username = newUsername;
+    public class UserAuthentication {
+        private String username;
+        private String password;
+        private boolean isLoggedIn;
+
+        public UserAuthentication(String username, String password) {
+            this.username = username;
+            this.password = password;
+            this.isLoggedIn = false; 
+        }
+
+        public void logIn() {
+            if (username.equals("Eingabe JavaFX") && password.equals("Eingabe JavaFX")) {
+                isLoggedIn = true;
+            } else {
+                isLoggedIn = false;
+            }
+        }
+
+        public void logOut() {
+            isLoggedIn = false;
+        }
+
+        public boolean isUserLoggedIn() {
+            return isLoggedIn; 
+        }
+
     }
 }

@@ -7,7 +7,8 @@ public class Main {
 
         Employee user = new Employee("BOB", "secure");
 
-        user.setVacationDays(30);
+        user.setVacationDays(0, 30);
+        
 
         /* // Einloggen
         userAuth.logIn();

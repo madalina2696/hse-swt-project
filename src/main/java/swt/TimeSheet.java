@@ -1,6 +1,6 @@
 package swt;
 
-public class TimeSheet {
+public class TimeSheet{
 
     private int month;
     private double totalHours;
